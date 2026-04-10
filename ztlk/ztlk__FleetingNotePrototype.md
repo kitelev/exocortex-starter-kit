@@ -1,0 +1,12 @@
+---
+exo__Asset_isDefinedBy: "[[!ztlk]]"
+exo__Asset_uid: 64e14e5e-ef94-4a4d-9658-6e7d32f808c0
+exo__Instance_class:
+  - "[[fca0a931-a01f-48e4-b72a-4af206c94bc7|ztlk__FleetingNote]]"
+  - "[[ebf717aa-4070-4b37-abde-10a700e354fc|exo__Prototype]]"
+exo__Asset_label: ztlk__FleetingNotePrototype
+---
+## Definition
+- 
+## Note
+- 

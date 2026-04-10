@@ -1,0 +1,8 @@
+---
+exo__Asset_isDefinedBy: "[[!ims]]"
+exo__Asset_uid: 9e07d347-8ea2-4852-b7c3-f7e0e3404854
+exo__Instance_class:
+  - "[[dda12c48-6886-4624-8710-ed4ba92ce2b3|ims__Concept]]"
+  - "[[ebf717aa-4070-4b37-abde-10a700e354fc|exo__Prototype]]"
+exo__Asset_label: ims__ConceptPrototype
+---
