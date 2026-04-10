@@ -1,0 +1,18 @@
+---
+exo__Asset_uid: 60967c6a-4e8a-4ee3-8922-db98b981e4f4
+exo__Asset_createdAt: "2026-04-04T16:00:00+0500"
+exo__Instance_class:
+  - "[[exo__Ontology]]"
+exo__Ontology_url: https://exocortex.my/ontology/exocmd#
+exo__Asset_description: Dynamic Command System — declarative commands as vault assets
+exo__Asset_relates:
+  - "[[8b787993-3244-4c77-93eb-3a4f98e921ae|RFC-009: Dynamic Command System]]"
+  - "[[9e116653-db44-4608-bde7-c5d00793e379|RFC-011: Fully Vault-Driven Architecture]]"
+---
+# Definitions
+```dataview
+TABLE exo__Instance_class, rdfs__comment
+WHERE exo__Asset_isDefinedBy = this.file.link
+SORT exo__Instance_class
+LIMIT 50
+```
