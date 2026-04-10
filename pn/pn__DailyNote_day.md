@@ -7,4 +7,5 @@ exo__Instance_class:
 exo__Property_domain: "[[pn__DailyNote]]"
 exo__Property_range: "[[period__Day]]"
 exo__Asset_description: День (дата) ежедневной заметки
+exo__Asset_label: pn__DailyNote_day
 ---
