@@ -10,6 +10,8 @@ exocmd__Command_precondition: "[[f73d0f13-26f8-42f9-950e-8883c835b114|Not in Blo
 exocmd__Command_grounding: "[[ef1d12dc-6a65-4f1d-b7f5-d5c5367d9633|Set status to Blocked]]"
 exocmd__Command_successMessage: "Status set to Blocked"
 exocmd__Command_category: "status"
+aliases:
+  - "Set Status Blocked"
 ---
 
 # Set Status Blocked

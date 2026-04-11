@@ -8,4 +8,6 @@ exo__Property_domain: "[[b04e7a3e-6b49-4984-9f8d-b74e9f36818b]]"
 exo__Property_range: "[[a298703f-3113-44fa-acf9-bc7d02d67040]]"
 exo__Asset_description: День (дата) ежедневной заметки
 exo__Asset_label: pn__DailyNote_day
+aliases:
+  - pn__DailyNote_day
 ---

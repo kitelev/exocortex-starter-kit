@@ -8,6 +8,8 @@ exo__Instance_class:
 exocmd__Grounding_type: "property_set"
 exocmd__Grounding_targetProperty: "ems__Effort_status"
 exocmd__Grounding_targetValue: "\"[[753a44d5-846c-4b82-9196-4fd9a4d48777]]\""
+aliases:
+  - "Set status to Backlog"
 ---
 
 # Set status to Backlog

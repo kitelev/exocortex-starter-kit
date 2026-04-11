@@ -8,6 +8,8 @@ exo__Instance_class:
 exocmd__Grounding_type: "property_set"
 exocmd__Grounding_targetProperty: "ems__Effort_scheduledDate"
 exocmd__Grounding_targetValue: "$input"
+aliases:
+  - "Set scheduled date"
 ---
 
 # Set scheduled date

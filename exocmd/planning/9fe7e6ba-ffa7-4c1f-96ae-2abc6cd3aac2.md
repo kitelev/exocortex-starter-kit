@@ -10,6 +10,8 @@ exocmd__CommandBinding_targetClass: "ems__Task"
 exocmd__CommandBinding_position: "inline"
 exocmd__CommandBinding_order: 440
 exocmd__CommandBinding_group: "planning"
+aliases:
+  - "Plan on Today → Task binding"
 ---
 
 # Plan on Today → Task binding
