@@ -11,6 +11,8 @@ exocmd__Precondition_sparqlAsk: >
     $target ems:Effort_status ?s .
     FILTER(?s != <https://exocortex.my/ontology/ems#EffortStatusWaiting>)
   }
+aliases:
+  - "Not in Waiting status"
 ---
 
 # Not in Waiting status

@@ -10,6 +10,8 @@ exocmd__Command_precondition: "[[5140daf0-a565-427b-a14d-8e7f7cf770a3|Not in Thi
 exocmd__Command_grounding: "[[6d78a3a4-401a-4fb9-8b44-48c6530eef62|Set zone to This Week]]"
 exocmd__Command_successMessage: "Criticality zone set to This Week"
 exocmd__Command_category: "criticality"
+aliases:
+  - "Set Criticality Medium"
 ---
 
 # Set Criticality Medium
