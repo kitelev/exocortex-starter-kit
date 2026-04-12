@@ -104,7 +104,7 @@ jobs:
           echo "" >> release_notes.md
           echo "### Contents" >> release_notes.md
 
-          for dir in exocmd exo ems ims period pn ztlk; do
+          for dir in exocmd exo ems ims period pn ztlk uj; do
             if [ -d "$dir" ]; then
               COUNT=$(find "$dir" -name "*.md" | wc -l | tr -d ' ')
               echo "- \`${dir}/\` — ${COUNT} files" >> release_notes.md
@@ -122,7 +122,7 @@ jobs:
         if: steps.commits.outputs.has_commits == 'true' && steps.check_tag.outputs.tag_exists == 'false'
         run: |
           zip -r exocortex-starter-kit.zip \
-            ems/ exo/ exocmd/ ims/ period/ pn/ ztlk/ README.md \
+            ems/ exo/ exocmd/ ims/ period/ pn/ ztlk/ uj/ README.md \
             -x '*.git*'
 
       - name: Create git tag

@@ -8,6 +8,7 @@ Ontology files for the [Exocortex](https://github.com/kitelev/exocortex) Obsidia
 |--------|-------|---------|
 | `exocmd/` | 188 | Dynamic command definitions — buttons for status transitions, task creation, planning, maintenance |
 | `pn/` | 3 | Periodic Notes ontology — Daily Note class for daily planning |
+| `uj/` | 17 | User Journey ontology — executable acceptance specs for core workflows (see `uj/journeys/`) |
 
 ## Installation
 
