@@ -2,11 +2,16 @@
 
 Ontology files for the [Exocortex](https://github.com/kitelev/exocortex) Obsidian plugin. Without these files, the plugin renders layouts but **buttons and commands won't appear**.
 
+## Prerequisites
+
+- **Exocortex plugin** v15.90.28+ (composite status groundings rely on the `$nowLocal` substitution variable shipped in that release).
+- **[Dataview](https://github.com/blacksmithgu/obsidian-dataview)** community plugin — the Daily Tasks widget on `pn__DailyNote` notes is gated on Dataview being installed and enabled. Status buttons, action panels, and Asset Relations work without it.
+
 ## What's Inside
 
 | Folder | Files | Purpose |
 |--------|-------|---------|
-| `exocmd/` | 188 | Dynamic command definitions — buttons for status transitions, task creation, planning, maintenance |
+| `exocmd/` | 193 | Dynamic command definitions — buttons for status transitions, task creation, planning, maintenance |
 | `pn/` | 3 | Periodic Notes ontology — Daily Note class for daily planning |
 | `uj/` | 17 | User Journey ontology — executable acceptance specs for core workflows (see `uj/journeys/`) |
 
@@ -66,7 +71,8 @@ If you installed with `degit` or ZIP — re-download and replace.
 
 | Starter Kit Version | Plugin Version |
 |---------------------|---------------|
-| v1.x | v15.86+ |
+| v1.6+ | v15.90.28+ (composite `Set Status Doing` / `Done` need `$nowLocal`) |
+| v1.5.x | v15.86+ |
 
 ## What Are These Files?
 
