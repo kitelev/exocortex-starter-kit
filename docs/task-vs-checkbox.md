@@ -4,6 +4,8 @@ One of the first things new users re-invent on their own: *"do I need a full Tas
 
 > Source: written to close [issue #34](https://github.com/kitelev/exocortex-starter-kit/issues/34), based on 1.5 hours of first-hour confusion recorded by a real user on 2026-04-12 (vault asset `37a88fda-74f3-4b26-bc93-8ebdac701c70`).
 
+> **New to Exocortex?** Read [The first 90 minutes](first-90-minutes.md) first — it walks you through the Area → Project → Task hierarchy in order and hits this same checkbox moment around minute 35. This page is the reference you come back to, not the introduction.
+
 ## TL;DR
 
 Use a **checkbox** inside the project note when the task is small, local to one project, and you don't care about its history. Use a **Task note** the moment you need the task to appear in the graph, span multiple areas, or carry its own metadata.
