@@ -97,6 +97,7 @@ If you installed with `degit` or ZIP — re-download and replace.
 Once the files are in your vault, these docs answer the questions new users hit in the first hour:
 
 - **[Task-note vs checkbox](docs/task-vs-checkbox.md)** — decision tree for "do I need a full Task note, or is a checkbox enough?"
+- **[Mobile capture](docs/mobile-capture.md)** — phone → inbox workflow for iOS and Android
 
 ## What Are These Files?
 
