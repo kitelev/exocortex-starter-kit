@@ -75,6 +75,12 @@ If you installed with `degit` or ZIP — re-download and replace.
 | v1.6.x | v15.91.0+ (composite `Set Status Doing` / `Done` need `$nowLocal`) |
 | v1.5.x | v15.86+ |
 
+## Getting Started
+
+Once the files are in your vault, these docs answer the questions new users hit in the first hour:
+
+- **[Task-note vs checkbox](docs/task-vs-checkbox.md)** — decision tree for "do I need a full Task note, or is a checkbox enough?"
+
 ## What Are These Files?
 
 Each button you see in the Exocortex layout (Set Status, Create Task, Plan on Today, etc.) is defined by 4 vault files:
