@@ -1,0 +1,9 @@
+---
+exo__Asset_isDefinedBy: "[[ca97bb2f-99bd-4ceb-b51e-c386b9231ae3]]"
+exo__Asset_uid: efa44aaf-02db-40c2-ae9a-a295eb28e70f
+exo__Instance_class:
+  - "[[30d63ce4-e574-456c-8de8-2bf1a53688c1|exo__StringProperty]]"
+exo__Asset_label: UID
+aliases:
+  - exo__Asset_uid
+---
