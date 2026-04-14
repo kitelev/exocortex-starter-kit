@@ -15,6 +15,23 @@ Ontology files for the [Exocortex](https://github.com/kitelev/exocortex) Obsidia
 | `pn/` | 3 | Periodic Notes ontology — Daily Note class for daily planning |
 | `uj/` | 17 | User Journey ontology — executable acceptance specs for core workflows (see `uj/journeys/`) |
 
+## Before you start: where does this live?
+
+Exocortex is Obsidian-based, so your vault is just a folder on disk. Pick **one** sync strategy *before* you invest time in content — otherwise your knowledge base lives on one machine only, and you'll rebuild it the day that machine dies.
+
+| Option | Cost | Mobile | E2E encrypted | Best for |
+|---|---|---|---|---|
+| **[Obsidian Sync](https://obsidian.md/sync)** ([pricing](https://obsidian.md/pricing)) | $4/mo (annual) or $5/mo Standard; $8/mo (annual) Plus | Yes (iOS + Android) | Yes | Casual users who want zero setup |
+| **iCloud Drive / Dropbox / Google Drive** | Free tier | Desktop only — **no official mobile support** | No | Cost-averse desktop-only users |
+| **Git** (GitHub/GitLab) | Free | Via [obsidian-git](https://github.com/denolehov/obsidian-git) plugin, fragile on mobile | Via repo visibility | Power users who want full history + diff |
+
+**One-line recommendation:**
+- **New to this?** Start with Obsidian Sync Standard ($4/mo annual). Zero config, mobile works, you can always switch later — your vault is just files.
+- **Developer who lives in git?** Point the vault at a private GitHub repo and use obsidian-git; skip mobile until you need it.
+- **Cost-averse, desktop-only?** iCloud Drive or Dropbox works, but understand you're giving up mobile.
+
+Without a sync strategy your vault is a local folder. That's fine for experimenting — just don't build for a week before deciding.
+
 ## Installation
 
 ### Option A: degit (no .git folder)
