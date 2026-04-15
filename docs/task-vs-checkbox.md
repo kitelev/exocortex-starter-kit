@@ -6,6 +6,8 @@ One of the first things new users re-invent on their own: *"do I need a full Tas
 
 > **New to Exocortex?** Read [The first 90 minutes](first-90-minutes.md) first — it walks you through the Area → Project → Task hierarchy in order and hits this same checkbox moment around minute 35. This page is the reference you come back to, not the introduction.
 
+> **Task spans multiple Areas or streams?** See [Multi-area task pattern](patterns/multi-area-task.md) for the canonical `ems__Effort_area` array shape.
+
 ## TL;DR
 
 Use a **checkbox** inside the project note when the task is small, local to one project, and you don't care about its history. Use a **Task note** the moment you need the task to appear in the graph, span multiple areas, or carry its own metadata.
