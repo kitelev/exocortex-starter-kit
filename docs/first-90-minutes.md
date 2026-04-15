@@ -55,9 +55,14 @@ exo__Asset_uid: area-01
 ```
 
 4. Save the file (`Cmd/Ctrl + S`).
-5. Switch to Reading Mode (`Cmd/Ctrl + E`). Expect to see:
+5. Switch to Reading Mode (`Cmd/Ctrl + E`). Expect something like this:
+
+![Area in Reading Mode](images/first-90-minutes/01-area-reading-mode.png)
+
+   - The **Properties** block shows `Class = ems__Area`, `Label = Personal Strategy 2026`, `UID = area-01`. Property keys render as readable labels (not raw `exo__Asset_label`) thanks to PropertiesLabelPatch.
+   - A **CREATE** section with action buttons (Create Project / Create Child Task / Create Task).
+   - An **Area tree** section explaining where sub-areas will appear.
    - An **Asset Relations** table (empty — the Area has no relations yet).
-   - In the File Explorer sidebar, the filename `area-01.md` now shows as **"Personal Strategy 2026"** instead of `area-01`. This is the [File Explorer label patch](https://github.com/kitelev/exocortex/pull/2805) shipped in plugin v15.98.3.
 6. **Stop and look.** You just created an Exocortex asset. The plugin recognizes it because `exo__Instance_class` points to the Area metaclass UUID, not because of the filename.
 
 **Pitfall:** if the relations panel shows nothing at all (not even an empty section), the plugin may not have indexed the new file yet. Wait 2–3 seconds or toggle Reading Mode off and on with `Cmd/Ctrl + E`.
@@ -85,7 +90,11 @@ ems__Effort_area:
 ---
 ```
 
-2. Save + Reading Mode.
+2. Save + Reading Mode. Expect something like:
+
+![Project with Effort Area backlink](images/first-90-minutes/02-project-asset-relations.png)
+
+   Note the `Effort Area` row in the Properties block pointing to "Personal Strategy 2026" — that's the wikilink you just wrote, rendered as a backlink. The CREATE and PLANNING sections show the actions available on a Project.
 3. Open the note `area-01.md` — you should see **"Launch side-project #1"** appear in its Asset Relations table. That's the Area receiving a back-reference from the Project via `ems__Effort_area`.
 4. Now open **Obsidian Graph View** (`Cmd/Ctrl + G` or click the graph icon in the left ribbon). You should see two nodes connected by a line.
 5. **Sit with this for 60 seconds.** This is the first moment where Exocortex stops being "files with frontmatter" and becomes "a knowledge graph". The line in the graph view comes from the single `[[area-01]]` wikilink in the Project's frontmatter. Nothing else.
@@ -122,7 +131,11 @@ ems__Effort_parent:
 
 Save.
 
-4. **Look at the Asset Relations table on the Project note.** You should see `task-01` listed. You should **NOT** see "Buy domain name".
+4. **Look at the Asset Relations table on the Project note.** You should see this:
+
+![Task note in Asset Relations, checkbox sitting below as plain text](images/first-90-minutes/03-project-task-note-no-checkbox.png)
+
+   See it? The **Effort Parent** table lists `Draft landing page copy` with Instance Class `Task` — that's the Task note you created. Below the table, `○ Buy domain name` sits as literal markdown — the Asset Relations query didn't pick it up. Same note, same body, completely different treatment.
 5. Open the Graph View. Expand the `project-01` node. You'll see:
    - An edge to `task-01` ✅
    - **No edge** to "Buy domain name" ❌
@@ -169,7 +182,11 @@ ems__Effort_area:
 ---
 ```
 
-3. Open Graph View, zoom in on `task-02`. You'll see **two edges** leaving the same Task node — one to each Area. This is fundamentally different from a folder tree: a file can only live in one folder, but a Task can cleanly belong to multiple conceptual Areas.
+3. Open `task-02.md` in Reading Mode, then open the **Local Graph View** via the command palette (`Cmd/Ctrl + P` → "Local graph"). You'll see **two edges** leaving the same Task node — one to each Area:
+
+![Local graph showing Task linked to two Areas](images/first-90-minutes/04-local-graph-multi-area.png)
+
+   In the screenshot: `Morning walk — planning + exercise` sits in the center with edges to `Personal Strategy 2026`, `Health`, and the `ems__Task` class. The Properties block on the left confirms both Areas are present as wikilinks in `Effort Area`. This is fundamentally different from a folder tree: a file can only live in one folder, but a Task can cleanly belong to multiple conceptual Areas.
 
 4. Open `area-01.md` — `task-02` appears in its relations. Open `area-02.md` — `task-02` appears there too. Same underlying asset, two filter views.
 
