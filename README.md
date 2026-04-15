@@ -100,6 +100,7 @@ Once the files are in your vault, these docs answer the questions new users hit 
 - **[Task-note vs checkbox](docs/task-vs-checkbox.md)** — decision tree for "do I need a full Task note, or is a checkbox enough?"
 - **[Mobile capture](docs/mobile-capture.md)** — phone → inbox workflow for iOS and Android
 - **[Task reminders](docs/reminders.md)** — wire `ems__Effort_plannedStartTimestamp` to desktop notifications via the Reminder community plugin
+- **[Calendar integration](docs/calendar-integration.md)** — Dataview weekly view, Day Planner, and why the Calendar plugin is not what you think it is
 - **[Graph View colors](docs/graph-colors.md)** — colorblind-safe preset that paints Areas / Projects / Tasks / Concepts in distinct hues
 
 ## What Are These Files?
