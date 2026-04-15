@@ -1,0 +1,19 @@
+---
+exo__Asset_isDefinedBy: "[[f6e01f7a-d727-494a-82a3-815597d33e86]]"
+exo__Asset_uid: ebabd2e2-491f-48a1-85db-6b5e63e16a9a
+exo__Asset_createdAt: 2026-04-15T18:00:00
+exo__Instance_class:
+  - "[[1b20a8f0-d745-4e93-91db-4531b3df120e|ems__Task]]"
+ems__Effort_parent: "[[00d0631d-56c7-4e4b-b98a-fc0b908e6bc9|Build my first project]]"
+exo__Asset_label: Read the docs
+aliases:
+  - Read the docs
+---
+
+First sample Task. Walk through the Exocortex README and the Getting
+Started guide to understand the core concepts: Asset, Ontology, Class,
+Instance, Layout, Command.
+
+When you are done reading, click "Mark Done" — the Task status will
+flip to `ems__EffortStatusDone` and the parent Project will recalculate
+its completion ratio automatically.

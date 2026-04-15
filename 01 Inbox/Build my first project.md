@@ -1,0 +1,23 @@
+---
+exo__Asset_isDefinedBy: "[[f6e01f7a-d727-494a-82a3-815597d33e86]]"
+exo__Asset_uid: 00d0631d-56c7-4e4b-b98a-fc0b908e6bc9
+exo__Asset_createdAt: 2026-04-15T18:00:00
+exo__Instance_class:
+  - "[[7db5eeff-718a-49b0-8d2b-39b084a356e3|ems__Project]]"
+ems__Effort_parent: "[[723b5de3-3047-41d9-a3dc-ea96ba28a5f1|Hello Area]]"
+exo__Asset_label: Build my first project
+aliases:
+  - Build my first project
+---
+
+This is your first **Project**. A Project has a clear finish line — once
+every Task underneath it is Done, the Project itself moves to Done.
+
+It is a child of `[[723b5de3-3047-41d9-a3dc-ea96ba28a5f1|Hello Area]]`
+and parents two Tasks:
+
+- `[[ebabd2e2-491f-48a1-85db-6b5e63e16a9a|Read the docs]]`
+- `[[8f139341-3584-44c1-ba8b-944289cef7e6|Try creating a task]]`
+
+Use the buttons on the right side of the note to transition its status,
+or to spawn a new child Task inline.
