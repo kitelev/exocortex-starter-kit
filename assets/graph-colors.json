@@ -1,0 +1,37 @@
+{
+  "_comment": "Color-group preset for Obsidian Graph View. Colors are Okabe-Ito colorblind-safe palette. See docs/graph-colors.md for install and customization. Issue #39.",
+  "_palette": {
+    "ems__Area":           "#E69F00 orange",
+    "ems__Project":        "#0072B2 blue",
+    "ems__Task":           "#56B4E9 sky blue",
+    "ims__Concept":        "#CC79A7 pink",
+    "ztlk__PermanentNote": "#009E73 green",
+    "ztlk__FleetingNote":  "#999999 gray"
+  },
+  "colorGroups": [
+    {
+      "query": "[\"exo__Instance_class\":\"ems__Area\"]",
+      "color": { "a": 1, "rgb": 15113984 }
+    },
+    {
+      "query": "[\"exo__Instance_class\":\"ems__Project\"]",
+      "color": { "a": 1, "rgb": 29362 }
+    },
+    {
+      "query": "[\"exo__Instance_class\":\"ems__Task\"]",
+      "color": { "a": 1, "rgb": 5682409 }
+    },
+    {
+      "query": "[\"exo__Instance_class\":\"ims__Concept\"]",
+      "color": { "a": 1, "rgb": 13400487 }
+    },
+    {
+      "query": "[\"exo__Instance_class\":\"ztlk__PermanentNote\"]",
+      "color": { "a": 1, "rgb": 40563 }
+    },
+    {
+      "query": "[\"exo__Instance_class\":\"ztlk__FleetingNote\"]",
+      "color": { "a": 1, "rgb": 10066329 }
+    }
+  ]
+}
