@@ -8,8 +8,9 @@ exo__Instance_class:
 exocmd__Precondition_sparqlAsk: >
   PREFIX ems: <https://exocortex.my/ontology/ems#>
   ASK {
-    $target ems:Effort_status ?s .
-    FILTER(?s != <https://exocortex.my/ontology/ems#EffortStatusWaiting>)
+    FILTER NOT EXISTS {
+      $target ems:Effort_status <https://exocortex.my/ontology/ems#EffortStatusWaiting> .
+    }
   }
 aliases:
   - "Not in Waiting status"
@@ -17,4 +18,4 @@ aliases:
 
 # Not in Waiting status
 
-SPARQL ASK precondition: returns `true` when asset status is NOT `ems__EffortStatusWaiting`.
+SPARQL ASK precondition: returns `true` when asset status is missing or NOT `ems__EffortStatusWaiting`.
