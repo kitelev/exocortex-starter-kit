@@ -2,6 +2,8 @@
 
 Ontology files for the [Exocortex](https://github.com/kitelev/exocortex) Obsidian plugin. Without these files, the plugin renders layouts but **buttons and commands won't appear**.
 
+> **🕒 New here? Read [The first 90 minutes](docs/first-90-minutes.md) first.** Strictly ordered walkthrough from plugin-check to "I get it" — collapses the typical 1.5h self-remodeling loop into 30 predictable minutes. Install first (below), then follow the guide.
+
 ## Prerequisites
 
 - **Exocortex plugin** v15.92.0+ (composite status groundings need `$nowLocal` — v15.91.0, and parent-aware Create Project needs `createRelatedProject` — v15.92.0). Earlier plugin versions partially work but will log "Service not found: createRelatedProject" on `Create Project` clicks.
