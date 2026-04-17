@@ -1,0 +1,8 @@
+PREFIX exo: <https://exocortex.my/ontology/exo#>
+
+SELECT ?task ?issue WHERE {
+  ?task exo:Asset_uid ?uid .
+  ?other exo:Asset_uid ?uid .
+  FILTER(STR(?task) != STR(?other))
+  BIND(CONCAT("duplicate exo__Asset_uid: ", STR(?uid)) AS ?issue)
+}
