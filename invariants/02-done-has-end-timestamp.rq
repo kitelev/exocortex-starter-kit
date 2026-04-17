@@ -1,0 +1,15 @@
+PREFIX exo: <https://exocortex.my/ontology/exo#>
+PREFIX ems: <https://exocortex.my/ontology/ems#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?task ?issue WHERE {
+  ?task exo:Instance_class ?class .
+  FILTER(STRENDS(STR(?class), "|ems__Task]]"))
+  ?task ems:Effort_status ?status .
+  FILTER(STRENDS(STR(?status), "7b9b3116-7c3c-438c-9618-94fe301320a6.md"))
+  FILTER NOT EXISTS {
+    ?task ems:Effort_endTimestamp ?end .
+    FILTER(DATATYPE(?end) = xsd:dateTime)
+  }
+  BIND("Done task missing xsd:dateTime Effort_endTimestamp" AS ?issue)
+}
