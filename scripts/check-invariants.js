@@ -32,12 +32,12 @@ const FIXTURES_DIR = path.join(INVARIANTS_DIR, '__fixtures__');
 const BROKEN_REL = path.join('invariants', '__fixtures__', 'broken');
 
 const CLI = 'npx';
-// Pin CLI version: v15.31.2 was the baseline when invariants 01-05 were
-// authored. On v15.98.x the class-wikilink edge emission shifts to ns URIs,
-// which breaks STRENDS filters in invariants 01/02. Pinning keeps local and
-// CI aligned until the invariants are hardened to cover both CLI shapes
-// (tracked in follow-up).
-const CLI_PKG = '@kitelev/exocortex-cli@15.31.2';
+// Pin CLI version: keeps local and CI aligned. Invariants 01-05 are shape-
+// hardened for both v15.31.x (class wikilink = literal, single-edge) and
+// v15.98.x (Instance_class + Effort_status = ns URI, UUID-filename wikilinks
+// emit dual-edge IRI + literal twin). Pinning mitigates silent regressions
+// from future CLI releases; bump the pin after re-running per-version checks.
+const CLI_PKG = '@kitelev/exocortex-cli@15.98.7';
 const CLI_ARGS_BASE = [
   '-y',
   CLI_PKG,
