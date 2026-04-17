@@ -1,0 +1,6 @@
+PREFIX ems: <https://exocortex.my/ontology/ems#>
+
+SELECT ?task (CONCAT("ems__Area parent cycle detected: ", STR(?task)) AS ?issue) WHERE {
+  ?task ems:Area_parent+ ?task .
+}
+GROUP BY ?task
