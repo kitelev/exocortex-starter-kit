@@ -5,7 +5,7 @@ exo__Instance_class:
   - "[[1b20a8f0-d745-4e93-91db-4531b3df120e|ems__Task]]"
 ems__Effort_status: "[[753a44d5-846c-4b82-9196-4fd9a4d48777|ems__EffortStatusBacklog]]"
 ems__Effort_relates:
-  - "[[1b20a8f0-d745-4e93-91db-4531b3df120e|ems__Task]]"
+  - "[[target-asset-05|Fixture valid 05 target]]"
 exo__Asset_label: Fixture valid 05 — Task with resolving relates
 aliases:
   - Fixture valid 05 — Task with resolving relates
