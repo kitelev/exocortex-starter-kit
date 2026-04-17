@@ -3,7 +3,10 @@ PREFIX ems: <https://exocortex.my/ontology/ems#>
 
 SELECT ?task ?issue WHERE {
   ?task exo:Instance_class ?class .
-  FILTER(STRENDS(STR(?class), "|ems__Task]]"))
+  FILTER(
+    STR(?class) = "https://exocortex.my/ontology/ems#Task"
+    || STRENDS(STR(?class), "|ems__Task]]")
+  )
   FILTER NOT EXISTS { ?task ems:Effort_status ?s }
   BIND("missing Effort_status" AS ?issue)
 }
