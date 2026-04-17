@@ -1,0 +1,8 @@
+PREFIX exo: <https://exocortex.my/ontology/exo#>
+PREFIX ems: <https://exocortex.my/ontology/ems#>
+
+SELECT ?task ?issue WHERE {
+  ?task ems:Effort_relates ?target .
+  FILTER NOT EXISTS { ?target exo:Asset_uid ?_anyUid }
+  BIND(CONCAT("ems__Effort_relates points to unresolved wikilink: ", STR(?target)) AS ?issue)
+}
