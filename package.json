@@ -4,8 +4,9 @@
   "private": true,
   "description": "Exocortex Starter Kit — ontology files + user journey assets for Obsidian vault onboarding",
   "scripts": {
-    "test": "node scripts/validate-journeys.js",
-    "test:journeys": "node scripts/validate-journeys.js"
+    "test": "node scripts/validate-journeys.js && node scripts/check-invariants.js",
+    "test:journeys": "node scripts/validate-journeys.js",
+    "test:invariants": "node scripts/check-invariants.js"
   },
   "dependencies": {
     "js-yaml": "^4.1.0"
