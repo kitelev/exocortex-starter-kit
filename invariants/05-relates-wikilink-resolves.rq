@@ -1,3 +1,14 @@
+# 05 — relates-wikilink-resolves.rq
+#
+# What:   Every ems__Effort_relates target must resolve to an asset carrying
+#         an exo__Asset_uid.
+# Why:    Dangling wikilinks fracture the graph — broken Related Efforts
+#         panels, orphan IRIs, stale references after file renames.
+# Output: ?task  — subject IRI of the offending Effort
+#         ?issue — annotation message naming the unresolved target
+# Notes:  Accepts both IRI targets (plugin file IRI / CLI ns URI) and literal
+#         "[[…]]" wikilink strings to cover both triple-store shapes.
+
 PREFIX exo: <https://exocortex.my/ontology/exo#>
 PREFIX ems: <https://exocortex.my/ontology/ems#>
 
