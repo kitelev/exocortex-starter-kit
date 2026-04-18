@@ -8,7 +8,8 @@
     "test:unit": "node --test scripts/check-invariants.unit.test.js",
     "test:integration": "node --test scripts/check-invariants.test.js",
     "test:journeys": "node scripts/validate-journeys.js",
-    "test:invariants": "node scripts/check-invariants.js"
+    "test:invariants": "node scripts/check-invariants.js",
+    "check:privacy": "bash scripts/check-privacy.sh"
   },
   "dependencies": {
     "js-yaml": "^4.1.0"
