@@ -32,15 +32,12 @@ const FIXTURES_DIR = path.join(INVARIANTS_DIR, '__fixtures__');
 const BROKEN_REL = path.join('invariants', '__fixtures__', 'broken');
 
 const CLI = 'npx';
-// Pin CLI version: keeps local and CI aligned. Invariants 01-05 are shape-
-// hardened for both v15.31.x (class wikilink = literal, single-edge) and
-// v15.98.x (Instance_class + Effort_status = ns URI, UUID-filename wikilinks
-// emit dual-edge IRI + literal twin). Pinning mitigates silent regressions
-// from future CLI releases; bump the pin after re-running per-version checks.
-const CLI_PKG = '@kitelev/exocortex-cli@15.98.7';
+// CLI version is now pinned in package.json devDependencies. npx resolves the
+// locally-installed binary from node_modules/.bin/ first, so no explicit
+// version suffix is needed here. Invariants 01-05 are shape-hardened for both
+// v15.31.x and v15.98.x. Bump the devDependency pin after per-version checks.
 const CLI_ARGS_BASE = [
-  '-y',
-  CLI_PKG,
+  '@kitelev/exocortex-cli',
   'sparql',
   'query',
   '--format',
