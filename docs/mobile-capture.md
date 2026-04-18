@@ -78,11 +78,28 @@ Mobile capture is worth nothing without a triage pass. Every evening (or morning
 
 Three minutes a day keeps the inbox to zero. More than that means you're capturing too liberally — tighten step 3.
 
-## Screenshots (TODO)
+## Screenshots
 
-> **Status**: text-only for now. Real screenshots of the iOS Shortcut and Android widget are a follow-up — see issue #44. Placeholders below will be replaced in a patch release.
+Reference captures for the steps above. If any image is missing locally, pull the latest `main` — they are kept in [`docs/images/mobile-capture/`](images/mobile-capture/).
 
-- `![iOS home-screen Shortcut for Inbox capture](TODO)`
-- `![Android Obsidian widget placement](TODO)`
+### iOS Shortcut
 
-If you land on this page and the screenshots are still missing, you can still follow the text instructions — the steps are stable across Obsidian 1.5+.
+![iOS Settings → Shortcuts home](images/mobile-capture/01-ios-shortcut-home.png)
+
+*Shortcuts app home screen — tap `+` to start a new shortcut for inbox capture.*
+
+![iOS Shortcut body configured](images/mobile-capture/02-ios-shortcut-body.png)
+
+*Shortcut body with the `Obsidian → Append to note` action wired to `01 Inbox/fleeting-{today}.md`.*
+
+### Android widget
+
+![Android home screen with Obsidian widget picker](images/mobile-capture/03-android-widget-home.png)
+
+*Long-press home screen → Widgets → Obsidian.*
+
+![Android Obsidian "Create new note" widget configured](images/mobile-capture/04-android-widget-configured.png)
+
+*Widget pointed at `01 Inbox/` with the fleeting-note template.*
+
+> If any image still shows as broken — the capture is pending (tracked in [issue #44](https://github.com/kitelev/exocortex-starter-kit/issues/44)). The text steps above remain authoritative.
