@@ -11,5 +11,8 @@
   },
   "dependencies": {
     "js-yaml": "^4.1.0"
+  },
+  "devDependencies": {
+    "@kitelev/exocortex-cli": "15.98.7"
   }
 }
