@@ -134,8 +134,9 @@ function buildScratchVault(fixtureDir) {
 
 function runInvariant(rqFilepath, opts = {}) {
   const cwd = opts.cwd || REPO_ROOT;
+  const exec = opts.exec || execFileSync;
   try {
-    const output = execFileSync(CLI, [...CLI_ARGS_BASE, rqFilepath], {
+    const output = exec(CLI, [...CLI_ARGS_BASE, rqFilepath], {
       cwd,
       encoding: 'utf8',
       timeout: 120000,
@@ -157,22 +158,28 @@ function runInvariant(rqFilepath, opts = {}) {
   }
 }
 
-function discoverInvariantFiles(onlyFilter) {
-  if (!fs.existsSync(INVARIANTS_DIR)) return [];
+function discoverInvariantFiles(onlyFilter, dir = INVARIANTS_DIR) {
+  if (!fs.existsSync(dir)) return [];
   return fs
-    .readdirSync(INVARIANTS_DIR)
+    .readdirSync(dir)
     .filter((f) => f.endsWith('.rq'))
     .filter((f) => !onlyFilter || f.includes(onlyFilter))
     .sort()
-    .map((f) => ({ name: f, path: path.join(INVARIANTS_DIR, f) }));
+    .map((f) => ({ name: f, path: path.join(dir, f) }));
 }
 
 function runAll(opts = {}) {
-  const { fixtureDir = null, only = null, silent = false } = opts;
+  const {
+    fixtureDir = null,
+    only = null,
+    silent = false,
+    invariantsDir = INVARIANTS_DIR,
+    exec = null,
+  } = opts;
   const log = silent ? () => {} : (...a) => console.log(...a);
   const errLog = silent ? () => {} : (...a) => console.error(...a);
 
-  const files = discoverInvariantFiles(only);
+  const files = discoverInvariantFiles(only, invariantsDir);
   if (files.length === 0) {
     errLog('::error::No .rq files found in invariants/');
     return { exitCode: 2, violations: [] };
@@ -185,7 +192,7 @@ function runAll(opts = {}) {
   try {
     for (const { name, path: full } of files) {
       if (!silent) process.stdout.write(`\u25b6 ${name} ... `);
-      const res = runInvariant(full, { cwd: scratch });
+      const res = runInvariant(full, { cwd: scratch, ...(exec ? { exec } : {}) });
       if (!res.ok) {
         log('INFRA ERROR');
         errLog(`::error file=invariants/${name}::CLI failed: ${res.error}`);
