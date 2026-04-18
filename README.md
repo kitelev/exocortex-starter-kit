@@ -117,6 +117,38 @@ Each button you see in the Exocortex layout (Set Status, Create Task, Plan on To
 
 This is the [vault-driven architecture](https://github.com/kitelev/exocortex) — commands are data, not code.
 
+## Regression invariants
+
+The CI workflow enforces 5 SPARQL SELECT invariants via `scripts/check-invariants.js`. Each invariant returns 0 rows when the vault is clean and ≥1 row per violation; the runner prints `::error file=<path>::<message>` annotations that GitHub Actions renders inline on the offending commit.
+
+- **`invariants/01-task-has-status.rq`** — every `ems__Task` has exactly one `ems__Effort_status`
+- **`invariants/02-done-has-end-timestamp.rq`** — `Done` tasks have `ems__Effort_endTimestamp` with datatype `xsd:dateTime`
+- **`invariants/03-unique-asset-uid.rq`** — no two assets share `exo__Asset_uid`
+- **`invariants/04-no-area-parent-cycles.rq`** — no cycles in `ems__Area_parent`
+- **`invariants/05-relates-wikilink-resolves.rq`** — every `ems__Effort_relates` target resolves to an existing asset by UUID
+
+Per-query `What / Why / Output / Notes` documentation lives in [`invariants/README.md`](invariants/README.md) — the `.rq` files stay body-only because the pinned CLI crashes on leading `#` SPARQL comments (upstream [kitelev/exocortex#2835](https://github.com/kitelev/exocortex/issues/2835)).
+
+### Adding a new invariant
+
+1. Write `invariants/NN-<name>.rq` — SELECT query that returns 0 rows on clean data, ≥1 row per violation. Include a 3–5 line comment header describing **What**, **Why**, **Output** bindings.
+2. Add a broken fixture at `invariants/__fixtures__/broken/NN-<name>/<file>.md` that violates exactly this invariant (the remaining 4 invariants must still return 0 against the same fixture set).
+3. Run `node --test scripts/check-invariants.test.js` locally to verify the integration tests (`I1`–`I3`) catch it.
+
+### Debugging a red CI
+
+GitHub Actions renders `::error file=<path>::NN-<name>.rq: <issue>` annotations inline on the affected files. Open the offending note, grep for the property referenced in the annotation, and either fix the data or delete the row — the runner re-passes once all 5 invariants return 0 rows.
+
+### Kill switch
+
+If an invariant must be disabled temporarily during a migration, rename it from `NN-<name>.rq` to `NN-<name>.rq.disabled` — the runner globs `*.rq` only and will skip the disabled file. Re-enable by renaming back.
+
+### Limitations
+
+- `04-no-area-parent-cycles.rq` uses `?area ems__Area_parent+ ?area` — worst-case O(N²) (acceptable for <100 Areas; benchmark before scaling past that).
+- Wikilink resolution in `05-relates-wikilink-resolves.rq` compares the UUID suffix (`STRENDS`) rather than full IRI equality, because CLI stores `ns:` URIs while the plugin stores `file:` IRIs.
+- CLI is pinned at `@kitelev/exocortex-cli@15.98.7` via `devDependencies`; bumping requires per-version Gate 0 verification against all 5 queries.
+
 ## License
 
 MIT — same as the Exocortex plugin.
