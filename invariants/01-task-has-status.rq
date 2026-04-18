@@ -1,3 +1,14 @@
+# 01 — task-has-status.rq
+#
+# What:   Finds ems__Task assets missing an ems__Effort_status edge.
+# Why:    Tasks without a status break Commands-panel filters, Daily/Weekly
+#         review roll-ups, and effort aggregations. Orphans accumulate silently.
+# Output: ?task  — subject IRI / UUID
+#         ?issue — human-readable message for the GHA annotation
+# Notes:  Task class matched via either ns URI or UUID-file-IRI
+#         ("|ems__Task]]" suffix) to survive CLI-vs-plugin triple-store
+#         divergence.
+
 PREFIX exo: <https://exocortex.my/ontology/exo#>
 PREFIX ems: <https://exocortex.my/ontology/ems#>
 

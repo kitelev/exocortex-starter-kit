@@ -127,7 +127,7 @@ The CI workflow enforces 5 SPARQL SELECT invariants via `scripts/check-invariant
 - **`invariants/04-no-area-parent-cycles.rq`** — no cycles in `ems__Area_parent`
 - **`invariants/05-relates-wikilink-resolves.rq`** — every `ems__Effort_relates` target resolves to an existing asset by UUID
 
-Per-query `What / Why / Output / Notes` documentation lives in [`invariants/README.md`](invariants/README.md) — the `.rq` files stay body-only because the pinned CLI crashes on leading `#` SPARQL comments (upstream [kitelev/exocortex#2835](https://github.com/kitelev/exocortex/issues/2835)).
+Per-query `What / Why / Output / Notes` documentation now lives **inside each `.rq` file** as a `#` comment header (CLI v15.101.0+ parses these correctly thanks to upstream [kitelev/exocortex#2835](https://github.com/kitelev/exocortex/issues/2835)). One follow-up gotcha tracked as [kitelev/exocortex#2844](https://github.com/kitelev/exocortex/issues/2844): the `CASE WHEN` validation scan still trips on the substring `case` inside a `#` comment when the query body contains projection expressions — avoid the substring `case` (case-insensitive) in invariant headers until that closes.
 
 ### Adding a new invariant
 
@@ -147,7 +147,7 @@ If an invariant must be disabled temporarily during a migration, rename it from 
 
 - `04-no-area-parent-cycles.rq` uses `?area ems__Area_parent+ ?area` — worst-case O(N²) (acceptable for <100 Areas; benchmark before scaling past that).
 - Wikilink resolution in `05-relates-wikilink-resolves.rq` compares the UUID suffix (`STRENDS`) rather than full IRI equality, because CLI stores `ns:` URIs while the plugin stores `file:` IRIs.
-- CLI is pinned at `@kitelev/exocortex-cli@15.98.7` via `devDependencies`; bumping requires per-version Gate 0 verification against all 5 queries.
+- CLI is pinned at `@kitelev/exocortex-cli@15.101.0` via `devDependencies`; bumping requires per-version Gate 0 verification against all 5 queries.
 
 ## License
 

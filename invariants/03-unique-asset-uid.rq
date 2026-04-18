@@ -1,3 +1,14 @@
+# 03 — unique-asset-uid.rq
+#
+# What:   No two assets may share the same exo__Asset_uid literal.
+# Why:    Duplicate UIDs silently corrupt joins across the graph and break
+#         backlink / frontmatter UID-to-file resolution.
+# Output: ?task  — first subject IRI of the colliding pair
+#         ?issue — message naming the duplicate UID
+# Notes:  Implemented as a self-join rather than GROUP BY / HAVING; both
+#         collision participants are reported as independent rows so each one
+#         gets its own annotation.
+
 PREFIX exo: <https://exocortex.my/ontology/exo#>
 
 SELECT ?task ?issue WHERE {

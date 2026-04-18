@@ -1,3 +1,15 @@
+# 02 — done-has-end-timestamp.rq
+#
+# What:   ems__Task in Done status must carry an ems__Effort_endTimestamp of
+#         datatype xsd:dateTime.
+# Why:    Done without an endTimestamp breaks productivity roll-ups; a bare
+#         "null" literal would slip past a plain EXISTS check, hence the
+#         DATATYPE filter.
+# Output: ?task  — subject IRI / UUID
+#         ?issue — human-readable message for the GHA annotation
+# Notes:  Done status matched via ns URI or UUID-file-IRI suffix (same
+#         CLI-vs-plugin divergence rationale as 01).
+
 PREFIX exo: <https://exocortex.my/ontology/exo#>
 PREFIX ems: <https://exocortex.my/ontology/ems#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>

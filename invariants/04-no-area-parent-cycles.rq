@@ -1,3 +1,15 @@
+# 04 — no-area-parent-cycles.rq
+#
+# What:   Detects cycles in ems__Area_parent via property path transitive
+#         closure -- subject reachable from itself.
+# Why:    Cycles trap downstream walks in infinite loops or arbitrary depth
+#         recursion across area aggregation and layout breadcrumbs.
+# Output: ?task  -- Area IRI caught in the cycle
+#         ?issue -- annotation message naming the offending IRI.
+# Notes:  The IRI guard rejects literal-UUID twins emitted by the v15.98.x
+#         triple store. Quadratic worst-shape -- benchmark before scaling
+#         past about 100 Areas.
+
 PREFIX ems: <https://exocortex.my/ontology/ems#>
 
 SELECT ?task (CONCAT("ems__Area parent cycle detected: ", STR(?task)) AS ?issue) WHERE {
