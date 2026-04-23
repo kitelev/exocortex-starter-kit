@@ -7,7 +7,6 @@ Ontology files for the [Exocortex](https://github.com/kitelev/exocortex) Obsidia
 ## Prerequisites
 
 - **Exocortex plugin** v15.92.0+ (composite status groundings need `$nowLocal` — v15.91.0, and parent-aware Create Project needs `createRelatedProject` — v15.92.0). Earlier plugin versions partially work but will log "Service not found: createRelatedProject" on `Create Project` clicks.
-- **[Dataview](https://github.com/blacksmithgu/obsidian-dataview)** community plugin — the Daily Tasks widget on `pn__DailyNote` notes is gated on Dataview being installed and enabled. Status buttons, action panels, and Asset Relations work without it.
 
 ## What's Inside
 
