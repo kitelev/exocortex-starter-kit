@@ -20,7 +20,7 @@ const FIXTURE_ROOT = path.join(
 );
 const TEN_MINUTES = 10 * 60 * 1000;
 
-test('I1: baseline — all 5 invariants pass with no fixture overlay', { timeout: TEN_MINUTES }, () => {
+test('I1: baseline — all 6 invariants pass with no fixture overlay', { timeout: TEN_MINUTES }, () => {
   const res = runAll({ silent: true });
   assert.equal(
     res.exitCode,
@@ -37,6 +37,7 @@ test('I2: each broken fixture triggers exactly its target invariant', { timeout:
     { dir: '03-duplicate-uid', invariant: '03-unique-asset-uid.rq' },
     { dir: '04-cycle', invariant: '04-no-area-parent-cycles.rq' },
     { dir: '05-dangling-relates', invariant: '05-relates-wikilink-resolves.rq' },
+    { dir: '06-duplicate-layout-priority', invariant: '06-unique-layout-priority-per-class.rq' },
   ];
   for (const { dir, invariant } of cases) {
     await t.test(`broken/${dir} flags ${invariant}`, () => {

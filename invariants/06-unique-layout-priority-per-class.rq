@@ -1,0 +1,38 @@
+# 06 — unique-layout-priority-per-class.rq
+#
+# What:   No two `exo__Layout` assets may share the same
+#         `exo__Layout_priority` while targeting the same
+#         `exo__Layout_targetClass`.
+# Why:    Layout precedence (RFC-024 §5) resolves multiple layouts for one
+#         class by sorting on priority ASC. A duplicate priority makes the
+#         resolution non-deterministic — the renderer would arbitrarily
+#         pick one based on triple-store iteration order, causing the
+#         active layout to flip between sessions / vault rebuilds.
+# Output: ?task  — first subject IRI of the colliding pair
+#         ?issue — message naming the duplicate (priority, targetClass)
+# Notes:  Implemented as a self-join (mirrors 03-unique-asset-uid.rq):
+#         both collision participants are reported as independent rows so
+#         each one gets its own annotation. Fires only when BOTH layouts
+#         declare an explicit priority — absence of priority is treated
+#         as "use plugin default" rather than a deliberate choice.
+#
+#         Property name follows code-side truth: the parser reads
+#         `exo__Layout_priority` (Layout.ts:126) and the resolver sorts
+#         by it; RFC-024 prose uses "order" as a synonym for the same
+#         slot.
+
+PREFIX exo: <https://exocortex.my/ontology/exo#>
+
+SELECT ?task ?issue WHERE {
+  ?task exo:Layout_priority ?priority .
+  ?task exo:Layout_targetClass ?cls .
+  ?other exo:Layout_priority ?priority .
+  ?other exo:Layout_targetClass ?cls .
+  FILTER(STR(?task) != STR(?other))
+  BIND(CONCAT(
+    "duplicate exo__Layout_priority ",
+    STR(?priority),
+    " for targetClass ",
+    STR(?cls)
+  ) AS ?issue)
+}
