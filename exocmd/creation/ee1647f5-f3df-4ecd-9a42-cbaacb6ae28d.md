@@ -9,6 +9,7 @@ exocmd__CommandBinding_command: "[[2adf3655-0ab9-4578-ad2e-223108729db8|Create C
 exocmd__CommandBinding_targetClass: "ems__Area"
 exocmd__CommandBinding_position: "inline"
 exocmd__CommandBinding_order: 220
+exocmd__CommandBinding_variant: "primary"
 exocmd__CommandBinding_group: "creation"
 aliases:
   - "Create Child Task → Area binding"

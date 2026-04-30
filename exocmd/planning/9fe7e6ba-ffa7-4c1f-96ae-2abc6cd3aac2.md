@@ -9,6 +9,7 @@ exocmd__CommandBinding_command: "[[98660cd8-e799-4cb0-be75-3f59d83a0838|Plan on 
 exocmd__CommandBinding_targetClass: "ems__Task"
 exocmd__CommandBinding_position: "inline"
 exocmd__CommandBinding_order: 440
+exocmd__CommandBinding_variant: "secondary"
 exocmd__CommandBinding_group: "planning"
 aliases:
   - "Plan on Today → Task binding"

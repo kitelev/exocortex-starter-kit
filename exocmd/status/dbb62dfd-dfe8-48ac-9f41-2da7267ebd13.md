@@ -9,6 +9,7 @@ exocmd__CommandBinding_command: "[[8a0758bb-5faa-46ad-94ab-920851ef22f9|Set Stat
 exocmd__CommandBinding_targetClass: "ems__Task"
 exocmd__CommandBinding_position: "inline"
 exocmd__CommandBinding_order: 155
+exocmd__CommandBinding_variant: "secondary"
 exocmd__CommandBinding_group: "status"
 aliases:
   - "Set Status Review → Task binding"
