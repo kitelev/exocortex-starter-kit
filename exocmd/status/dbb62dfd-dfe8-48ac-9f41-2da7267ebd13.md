@@ -3,6 +3,7 @@ exo__Asset_uid: dbb62dfd-dfe8-48ac-9f41-2da7267ebd13
 exo__Asset_label: "Set Status Review → Task binding"
 exo__Asset_isDefinedBy: "[[60967c6a-4e8a-4ee3-8922-db98b981e4f4]]"
 exo__Asset_createdAt: "2026-04-05T12:00:00+0500"
+exo__Asset_updatedAt: "2026-05-02T00:32:46+0500"
 exo__Instance_class:
   - "[[3677039a-a5a8-4402-9a07-f8f18fe384ad]]"
 exocmd__CommandBinding_command: "[[8a0758bb-5faa-46ad-94ab-920851ef22f9|Set Status Review]]"
@@ -10,7 +11,6 @@ exocmd__CommandBinding_targetClass: "ems__Task"
 exocmd__CommandBinding_position: "inline"
 exocmd__CommandBinding_order: 155
 exocmd__CommandBinding_variant: "secondary"
-exocmd__CommandBinding_group: "status"
 aliases:
   - "Set Status Review → Task binding"
 ---
