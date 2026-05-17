@@ -31,13 +31,14 @@ const INVARIANTS_DIR = path.join(REPO_ROOT, 'invariants');
 const FIXTURES_DIR = path.join(INVARIANTS_DIR, '__fixtures__');
 const BROKEN_REL = path.join('invariants', '__fixtures__', 'broken');
 
-const CLI = 'npx';
-// CLI version is now pinned in package.json devDependencies. npx resolves the
-// locally-installed binary from node_modules/.bin/ first, so no explicit
-// version suffix is needed here. Invariants 01-05 are shape-hardened for both
-// v15.31.x and v15.98.x. Bump the devDependency pin after per-version checks.
+// Call the locally-pinned binary directly via node_modules/.bin to avoid npx
+// falling back to a global / latest registry install when the resolution
+// ambiguity bites. CLI v16+ dropped the `sparql` parent command (replaced by
+// `exoql`); using the package-name form or any path that npx may upgrade
+// silently breaks this script. Pin is `@kitelev/exocortex-cli@15.101.0` in
+// package.json devDependencies — bump after per-version invariant checks.
+const CLI = path.join(REPO_ROOT, 'node_modules', '.bin', 'exocortex-cli');
 const CLI_ARGS_BASE = [
-  '@kitelev/exocortex-cli',
   'sparql',
   'query',
   '--format',
