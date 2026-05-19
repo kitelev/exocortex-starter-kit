@@ -7,7 +7,7 @@ exo__Instance_class:
   - "[[11579feb-2e42-491c-af59-b89b1129a539]]"
 exocmd__Grounding_type: "property_set"
 exocmd__Grounding_targetProperty: "ems__Effort_status"
-exocmd__Grounding_targetValue: "\"[[753a44d5-846c-4b82-9196-4fd9a4d48777]]\""
+exocmd__Grounding_targetValueRef: "[[753a44d5-846c-4b82-9196-4fd9a4d48777]]"
 aliases:
   - "Set status to Backlog"
 ---
